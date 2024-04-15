@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <h1>Clique na área abaixo</h1>
+    <div>
+      <canvas id="myCanvas" width="800" height="500" style="background-color: aliceblue; border:1px solid #000000;" ></canvas>  
+    </div>
+    
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var brush = canvas.getContext("2d");
+        canvas.addEventListener("click", function(click){
+            var x = click.clientX - canvas.offsetLeft;
+            var y = click.clientY - canvas.offsetTop;
+            brush.fillStyle = "black";
+            brush.fillRect(x, y, 10, 10);
+        });
+    </script>  
+    
+</body>
+</html>
